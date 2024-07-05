@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Quiz Maker</title>
+  <link rel="stylesheet" href="loginPage.css">
+  <script src="https://kit.fontawesome.com/0acd0cc147.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="title"><i><h3>Online quiz maker</h3></i></div><br>
+  <div class="container">
+    <div class="login-container">
+      <div class="login-box quiz-master">
+        <h2><i class="fa-solid fa-user"></i> Quiz Master Login</h2>
+        <form id="quizMasterForm" method="post" action="server.php">
+          <input type="hidden" name="login_type" value="quiz_master">
+          <input type="email" name="email" id="quizMasterEmail" placeholder="Email" required><br>
+          <input type="password" name="password" id="quizMasterPassword" placeholder="Password" required><br>
+          <button type="submit" name="login_user"><a href="quizMakerHomePage.html" style="text-decoration: none;color:white;">Login</a></button><br>
+          <a href="register.html" style="text-decoration:none">Sign up as quiz Master</a>
+        </form>
+      </div>
+      <div class="login-box contestant">
+        <h2><i class="fa-solid fa-user"></i> Contestant Login</h2>
+        <form id="contestantForm" method="post" action="server.php">
+          <input type="hidden" name="login_type" value="contestant">
+          <input type="email" name="email" id="contestantEmail" placeholder="Email" required><br>
+          <input type="password" name="password" id="contestantPassword" placeholder="Password" required><br>
+          <button type="submit" name="login_user"><a href="studentHomePage.html" style="text-decoration: none;color:white;">Login</a></button><br>
+          <a href="register.html" style="text-decoration:none">Sign up as contestant</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

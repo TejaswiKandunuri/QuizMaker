@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizller - Create New Test</title>
+    <link rel="stylesheet" href="quizMakerHomePage.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Quiz Maker</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Add Class / Student</a></li>
+                    <li><a href="#">Statistics</a></li>
+                    <li><a href="#">View Data</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h2>DASHBOARD BASIC SETTINGS</h2>
+            </header>
+            <section class="content">
+                <div class="card">
+                    <h3>Create New Test</h3>
+                    <form id="create-test-form">
+                        <label for="test-name">Test name (title)</label>
+                        <input type="text" id="test-name" name="test-name" >
+                        <!-- value="Developer Quiz" -->
+                        
+                        <label for="subject-name">Subject name</label>
+                        <input type="text" id="subject-name" name="subject-name" value="General">
+                        
+                        <label for="test-date">Test date</label>
+                        <input type="date" id="test-date" name="test-date" value="2023-05-30">
+                        
+                        <label for="total-questions">Total Questions count</label>
+                        <input type="number" id="total-questions" name="total-questions" value="2">
+                        
+                        <label for="status">Status</label>
+                        <select id="status" name="status">
+                            <option value="pending">PENDING</option>
+                            <option value="InProgress">In Progress</option>
+                            <option value="NewTest">New Test</option>
+                            <option value="HighPriority">High Priority</option>
+                            <option value="LowPriority">Low Priority</option>
+                            <option value="Critical">Critical</option>
+                            
+                            <!-- Add other options as needed -->
+                        </select>
+                        
+                        <label for="class">Class</label>
+                        <select id="class" name="class">
+                            <option value="web-class">Web class</option>
+                            <option value="Aptitude-class">Aptitude class</option>
+                            <option value="development-class">development class</option>
+                            <option value="English-class">English class</option>
+                            <!-- Add other options as needed -->
+                        </select>
+                        
+                        <div class="footer">
+                            <button><a href="add_ques.html" style="text-decoration: none; color: white;">CREATE TEST</a></button>
+                            <button><a href="loginPage.html" style="text-decoration: none; color: white;">Go Back/Log Out</a></button>
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <p>© 2024, created by<a href="#">Tejaswi Kandunuri</a>.</p>
+    </footer>
+    <script src="quizMakerHomePage.js"></script>
+</body>
+</html>

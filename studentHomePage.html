@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizller</title>
+    <link rel="stylesheet" href="studentHomePage.css">
+    <script src="https://kit.fontawesome.com/0acd0cc147.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz Contestant</h1>
+            <div class="user-info" style="float:right;">
+                <img src="profilePic.jpg" alt="User Profile" class="profile-pic" style="position: absolute; top:1em; left:1em"><br>
+                <div class="box" style="position: absolute; top:7em; left:0.3em ;display:flex; align-items:center;">
+                    <!-- <span class="user-id" style="position: absolute; top:10em; left:0.5em"> -->
+                    <i class="fa-solid fa-user"></i>
+                     <span style="margin-top: 0.3em; padding-left:8px;"><h5>UserID:123</h5> </p>
+                    </span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="quiz-card">
+                <h2>Developer Quiz</h2>
+                <button id="start-test-btn">
+                    <i class="fa-solid fa-hourglass-start"></i><a href="contestant_test.html" style="text-decoration: none; color: white;"> Start Test</a>
+                </button>
+                <button id="start-test-btn" >
+                    <a href="loginPage.html" style= "text-decoration : none ; color: white">
+                        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+                    </a>
+                </button>
+
+            </div>
+        </main>
+    </div>
+    <script src="studentHomePage.js"></script>
+</body>
+</html>

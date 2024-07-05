@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+    <link rel="stylesheet" href="add_ques.css">
+    <script>
+        let questions = JSON.parse(localStorage.getItem('questions')) || [];
+
+        function addQuestion() {
+            const title = document.getElementById('questionTitle').value;
+            const optionA = document.getElementById('optionA').value;
+            const optionB = document.getElementById('optionB').value;
+            const optionC = document.getElementById('optionC').value;
+            const optionD = document.getElementById('optionD').value;
+            const correctOption = document.getElementById('correctOption').value;
+            const score = document.getElementById('score').value;
+
+            if (title && optionA && optionB && optionC && optionD && correctOption && score) {
+                const question = {
+                    title,
+                    options: { A: optionA, B: optionB, C: optionC, D: optionD },
+                    correctOption,
+                    score
+                };
+
+                questions.push(question);
+                clearForm();
+            } else {
+                alert("Please fill out all fields.");
+            }
+        }
+
+        function clearForm() {
+            document.getElementById('questionTitle').value = '';
+            document.getElementById('optionA').value = '';
+            document.getElementById('optionB').value = '';
+            document.getElementById('optionC').value = '';
+            document.getElementById('optionD').value = '';
+            document.getElementById('correctOption').value = '';
+            document.getElementById('score').value = '';
+        }
+
+        function done() {
+            addQuestion();
+            localStorage.setItem('questions', JSON.stringify(questions));
+            window.location.href = 'test_ques.html';
+        }
+    </script>
+</head>
+<body>
+    <div id="add-question-container">
+        <h1>Add New Question</h1>
+        <label for="questionTitle">Question Title:</label>
+        <input type="text" id="questionTitle"><br>
+        <label for="optionA">Option A:</label>
+        <input type="text" id="optionA"><br>
+        <label for="optionB">Option B:</label>
+        <input type="text" id="optionB"><br>
+        <label for="optionC">Option C:</label>
+        <input type="text" id="optionC"><br>
+        <label for="optionD">Option D:</label>
+        <input type="text" id="optionD"><br>
+        <label for="correctOption">Correct Option (A/B/C/D):</label>
+        <input type="text" id="correctOption"><br>
+        <label for="score">Score:</label>
+        <input type="number" id="score"><br>
+        <button onclick="addQuestion()">Add Question</button>
+        <button onclick="done()">Done</button>
+        <button><a href="quizMakerHomePage.html" style="text-decoration: none; color:white;">Go Back</a></button>
+    </div>
+</body>
+</html>

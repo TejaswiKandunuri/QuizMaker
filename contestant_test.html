@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contestant Test</title>
+    <link rel="stylesheet" href="contestant_styles.css">
+    <script src="contestant_script.js" defer></script>
+</head>
+<body>
+    <div id="test-container">
+        <h1 id="test-name"></h1>
+        <div id="question-container">
+            <!-- Questions will be dynamically added here -->
+        </div>
+        <div id="control-buttons">
+            <button id="clear-response" onclick="clearResponse()">Clear Response</button>
+            <button id="next-question" onclick="nextQuestion()">Next Question</button>
+            <button id="submit-test" onclick="submitTest()">Submit Test</button>
+        </div>
+    </div>
+</body>
+<script>
+    const testName = localStorage.getItem('data');
+    document.getElementById('test-name').innerHTML = testName;
+</script>
+</html>

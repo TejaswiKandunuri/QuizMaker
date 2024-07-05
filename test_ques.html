@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Questions</title>
+    <link rel="stylesheet" href="add_ques.css">
+    <script>
+        function loadQuestions() {
+            const questions = JSON.parse(localStorage.getItem('questions')) || [];
+            const table = document.getElementById('questionsTable');
+
+            questions.forEach((question, index) => {
+                const row = table.insertRow();
+                row.insertCell(0).innerText = index + 1;
+                row.insertCell(1).innerText = question.title;
+                row.insertCell(2).innerText = `A: ${question.options.A}, B: ${question.options.B}, C: ${question.options.C}, D: ${question.options.D}`;
+                row.insertCell(3).innerText = question.correctOption;
+                row.insertCell(4).innerText = question.score;
+                const deleteCell = row.insertCell(5);
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete';
+                deleteButton.onclick = () => {
+                    questions.splice(index, 1);
+                    localStorage.setItem('questions', JSON.stringify(questions));
+                    location.reload();
+                };
+                deleteCell.appendChild(deleteButton);
+            });
+        }
+
+        function addNewQuestion() {
+            window.location.href = 'add_ques.html';
+        }
+
+        function upload() {
+            const questions = JSON.parse(localStorage.getItem('questions')) || [];
+
+            // Store questions in a shared location accessible to both pages
+            localStorage.setItem('uploadedQuestions', JSON.stringify(questions));
+
+             alert('Test uploaded successfully!');
+            window.location.href = 'testCreated.html';
+}
+
+
+        window.onload = loadQuestions;
+    </script>
+</head>
+<body>
+    <div id="questions-container">
+        <h1>Test Questions</h1>
+        <table id="questionsTable">
+            <tr>
+                <th>Serial No</th>
+                <th>Question Title</th>
+                <th>Options</th>
+                <th>Correct Option</th>
+                <th>Score</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+        <button onclick="addNewQuestion()">Add New Question</button>
+        <button onclick="upload()">Upload</button>
+        <button><a href="add_ques.html" style="text-decoration: none; color:white;">Go Back</a></button>
+    </div>
+</body>
+</html>

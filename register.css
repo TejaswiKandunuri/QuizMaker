@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#00DBDE, #FC00FF), url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background: linear-gradient(90deg, #00DBDE, #FC00FF);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: linear-gradient(90deg, #FC00FF, #00DBDE);
+}
+
+.form-container a {
+    color: #00DBDE;
+}
+
+.form-container p {
+    margin-top: 20px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+label a {
+    margin-left: 5px;
+    color: #00DBDE;
+    text-decoration: none;
+}
+
+label input[type="checkbox"] {
+    margin-right: 10px;
+}
